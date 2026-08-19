@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import { getRelativeLocaleUrl } from "astro:i18n";
-import IconRss from "@/assets/icons/IconRss.svg";
 import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
@@ -75,19 +74,7 @@ const homePath = getRelativeLocaleUrl(locale, "");
             <div class="me-2 mb-1 whitespace-nowrap sm:mb-0">
               {t.home.socialLinks}:
             </div>
-            <div class="flex items-center gap-1">
-              <Socials />
-              <a
-                target="_blank"
-                href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}rss.xml`}
-                class="focus-outline p-2 hover:rotate-6 sm:p-1"
-                aria-label="订阅 RSS（新窗口打开）"
-                title="订阅 RSS"
-              >
-                <IconRss class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 sm:scale-110" />
-                <span class="sr-only">订阅 RSS</span>
-              </a>
-            </div>
+            <Socials />
           </div>
         )
       }
