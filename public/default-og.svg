@@ -3,7 +3,7 @@
   <rect x="64" y="64" width="1072" height="502" rx="28" fill="#ffffff" stroke="#006cac" stroke-width="6" />
   <rect x="106" y="108" width="104" height="104" rx="24" fill="#006cac" />
   <text x="158" y="178" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#ffffff">LZS</text>
-  <text x="106" y="310" font-family="Arial, sans-serif" font-size="76" font-weight="700" fill="#282728">LZS Tech Notes</text>
+  <text x="106" y="310" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#282728">Li Zengsheng's Blog</text>
   <text x="106" y="392" font-family="Arial, sans-serif" font-size="38" fill="#006cac">Post-training · Agent · Agentic RL</text>
   <text x="106" y="490" font-family="Arial, sans-serif" font-size="28" fill="#6b7280">lizengsheng.github.io/Blog</text>
 </svg>

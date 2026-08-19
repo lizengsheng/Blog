@@ -1,6 +1,6 @@
-# 李增圣的技术博客
+# Li Zengsheng’s Blog
 
-基于 [AstroPaper](https://github.com/satnaing/astro-paper) 构建的中文技术博客，聚焦大模型后训练、Agent 与 Agentic RL。
+基于 [AstroPaper](https://github.com/satnaing/astro-paper) 构建的 Blog，聚焦大模型后训练、Agent 与 Agentic RL。
 
 - 线上地址：<https://lizengsheng.github.io/Blog/>
 - 默认语言：简体中文
@@ -48,7 +48,7 @@ pnpm preview
 
 ## 项目文档
 
-设计、技术栈、实施批次与进度记录位于 `memory-bank/`。后续维护前请先阅读 `AGENTS.md`。
+详细的文章、页面、链接更新与 GitHub Pages 发布流程见 [内容更新与部署指南](docs/UPDATE-GUIDE.md)。设计、技术栈、实施批次与进度记录位于 `memory-bank/`。后续维护前请先阅读 `AGENTS.md`。
 
 ## 致谢与许可
 

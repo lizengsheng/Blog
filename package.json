@@ -13,7 +13,8 @@
     "astro": "astro",
     "format:check": "prettier --check .",
     "format": "prettier --write .",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "check:links": "node scripts/check-live-links.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^7.0.0",

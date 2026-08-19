@@ -1,6 +1,6 @@
 # 项目协作约定
 
-本仓库是李增圣的中文技术博客，基于 AstroPaper 构建并部署到 GitHub Pages 项目子路径 `/Blog/`。
+本仓库是 Li Zengsheng 的 Blog，基于 AstroPaper 构建并部署到 GitHub Pages 项目子路径 `/Blog/`。
 
 ## 开发约定
 

@@ -42,3 +42,10 @@
 - 将 GitHub Pages Source 设置为 GitHub Actions，正式地址为 `https://lizengsheng.github.io/Blog/`。
 - Pages 生产构建与部署成功；线上主页、文章、About、搜索、RSS、站点地图、favicon 和 Pagefind 资源均返回 200。
 - 在线 Pagefind 使用 `Agentic RL` 查询可返回正确文章，首页 canonical、中文标题和在线简历链接均正确。
+
+## 2026-08-19：品牌命名与维护流程
+
+- 将站点标题、作者、首页、About、无障碍文本与项目文档中的姓名统一为 `Li Zengsheng`，站点名称统一为 `Li Zengsheng's Blog`。
+- 更新静态社交预览图，保留 LZS 标识并使用新的 Blog 名称。
+- 新增内容更新与部署指南，明确文章、前端页面和链接的修改、验证、提交、推送与 Pages 确认流程。
+- 新增线上链接巡检脚本，可检查站内页面、资源、锚点和外部 HTTP(S) 链接，并将反爬限制与明确失效分开报告。

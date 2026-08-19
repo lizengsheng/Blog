@@ -3,10 +3,10 @@ import { defineAstroPaperConfig } from "./src/types/config";
 export default defineAstroPaperConfig({
   site: {
     url: "https://lizengsheng.github.io",
-    title: "李增圣的技术博客",
+    title: "Li Zengsheng's Blog",
     description:
       "聚焦大模型后训练、Agent 与 Agentic RL，记录原理、工程实践与持续学习。",
-    author: "李增圣",
+    author: "Li Zengsheng",
     profile: "https://github.com/lizengsheng",
     ogImage: "default-og.png",
     lang: "zh-CN",
@@ -33,12 +33,12 @@ export default defineAstroPaperConfig({
     {
       name: "github",
       url: "https://github.com/lizengsheng",
-      linkTitle: "访问李增圣的 GitHub",
+      linkTitle: "访问 Li Zengsheng 的 GitHub",
     },
     {
       name: "mail",
       url: "mailto:1910853272@qq.com",
-      linkTitle: "发送邮件给李增圣",
+      linkTitle: "发送邮件给 Li Zengsheng",
     },
   ],
   shareLinks: [

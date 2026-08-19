@@ -5,6 +5,8 @@
 !/src
 !/public
 !/.github
+!/docs
+!/scripts
 !tsconfig.json
 !astro.config.ts
 !package.json
@@ -15,3 +17,6 @@
 
 # Ignore MDX files
 *.mdx
+
+# Preserve the existing workflow formatting.
+.github/workflows/*.yml

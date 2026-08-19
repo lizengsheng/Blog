@@ -1,9 +1,9 @@
 ---
 title: "关于我"
-description: "李增圣的教育背景、技术方向与公开学习项目。"
+description: "Li Zengsheng 的教育背景、技术方向与公开学习项目。"
 ---
 
-你好，我是李增圣。目前关注**大模型后训练、Agent 与 Agentic RL**，希望把学习过程沉淀为可以检索、复现和继续迭代的技术内容。
+你好，我是 Li Zengsheng。目前关注**大模型后训练、Agent 与 Agentic RL**，希望把学习过程沉淀为可以检索、复现和继续迭代的技术内容。
 
 这个博客不是一份静态的技能清单。我更希望它能持续回答三个问题：我正在研究什么、我如何理解复杂系统、以及这些理解如何转化为可验证的工程实践。
 
@@ -27,7 +27,7 @@ description: "李增圣的教育背景、技术方向与公开学习项目。"
 
 ## 联系方式
 
-- 在线简历：[查看李增圣的在线简历](https://lizengsheng.github.io/Resume/)
+- 在线简历：[查看 Li Zengsheng 的在线简历](https://lizengsheng.github.io/Resume/)
 - GitHub：[@lizengsheng](https://github.com/lizengsheng)
 - 邮箱：[1910853272@qq.com](mailto:1910853272@qq.com)
 
