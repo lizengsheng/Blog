@@ -6,8 +6,20 @@ const sitePrefix = startUrl.pathname.endsWith("/")
   ? startUrl.pathname
   : `${startUrl.pathname}/`;
 
-const pendingInternal = [new URL(startUrl)];
-const queuedInternal = new Set();
+const siteRoot = new URL(startUrl);
+siteRoot.pathname = sitePrefix;
+siteRoot.search = "";
+siteRoot.hash = "";
+
+const seedPaths = [
+  "",
+  "404.html",
+  "rss.xml",
+  "sitemap-index.xml",
+  "robots.txt",
+];
+const pendingInternal = seedPaths.map(path => new URL(path, siteRoot));
+const queuedInternal = new Set(pendingInternal.map(withoutFragment));
 const checkedInternal = new Map();
 const externalSources = new Map();
 const fragmentChecks = [];
@@ -107,8 +119,6 @@ async function fetchWithTimeout(url) {
     signal: AbortSignal.timeout(15_000),
   });
 }
-
-queuedInternal.add(withoutFragment(startUrl));
 
 while (pendingInternal.length > 0) {
   const url = pendingInternal.shift();
