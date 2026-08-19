@@ -113,11 +113,24 @@ function extractIds(html) {
 }
 
 async function fetchWithTimeout(url) {
-  return fetch(url, {
-    redirect: "follow",
-    headers: { "user-agent": "Li-Zengsheng-Blog-Link-Checker/1.0" },
-    signal: AbortSignal.timeout(15_000),
-  });
+  let lastError;
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
+    try {
+      const response = await fetch(url, {
+        redirect: "follow",
+        headers: { "user-agent": "Li-Zengsheng-Blog-Link-Checker/1.0" },
+        signal: AbortSignal.timeout(15_000),
+      });
+      const retryable = response.status === 429 || response.status >= 500;
+      if (!retryable || attempt === 3) return response;
+      await response.body?.cancel();
+    } catch (error) {
+      lastError = error;
+      if (attempt === 3) throw error;
+    }
+    await new Promise(resolve => setTimeout(resolve, attempt * 250));
+  }
+  throw lastError;
 }
 
 while (pendingInternal.length > 0) {
