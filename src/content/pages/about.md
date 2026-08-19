@@ -1,6 +1,6 @@
 ---
 title: "关于我"
-description: "Li Zengsheng 的教育背景、技术方向与公开学习项目。"
+description: "Li Zengsheng 的教育背景、技术方向与联系方式。"
 ---
 
 你好，我是 Li Zengsheng。目前关注**大模型后训练、Agent 与 Agentic RL**，希望把学习过程沉淀为可以检索、复现和继续迭代的技术内容。
@@ -17,13 +17,6 @@ description: "Li Zengsheng 的教育背景、技术方向与公开学习项目�
 - 大模型后训练：监督微调、偏好优化、强化学习与评估
 - Agent 工程：工具调用、状态管理、执行编排、可观测性与可靠性
 - Agentic RL：交互环境、轨迹采样、奖励设计与长程信用分配
-
-## 公开学习项目
-
-- [LLM](https://github.com/lizengsheng/LLM)：大模型基础、部署与微调实验记录
-- [LLM-Interview](https://github.com/lizengsheng/LLM-Interview)：大语言模型知识体系与面试笔记
-- [AI-Interview](https://github.com/lizengsheng/AI-Interview)：机器学习、深度学习、搜索、推荐与 RAG 知识整理
-- [llama3](https://github.com/lizengsheng/llama3)：从矩阵运算出发理解 Llama 3 的实现
 
 ## 联系方式
 

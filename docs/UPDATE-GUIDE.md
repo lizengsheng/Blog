@@ -37,7 +37,7 @@ pnpm install --frozen-lockfile
 | 站点标题、作者、GitHub、邮箱 | `astro-paper.config.ts`       |
 | 首页介绍、简历按钮           | `src/pages/index.astro`       |
 | 顶部导航                     | `src/components/Header.astro` |
-| About 内容与项目链接         | `src/content/pages/about.md`  |
+| About 个人资料与联系方式     | `src/content/pages/about.md`  |
 | 中文 UI 词条                 | `src/i18n/lang/zh-CN.ts`      |
 | favicon 与社交预览图         | `public/`                     |
 
@@ -53,14 +53,20 @@ pnpm dev
 
 浏览器打开 `http://localhost:4321/Blog/`。重点检查桌面端、移动端、深浅主题，以及新增或修改的链接。
 
+需要巡检本地预览链接时，在预览服务运行期间执行：
+
+```powershell
+pnpm run check:links -- http://localhost:4321/Blog/
+```
+
 提交前运行：
 
 ```powershell
-pnpm run format:check
-pnpm run lint
-pnpm run build
+pnpm run verify
 git diff --check
 ```
+
+`pnpm run verify` 会依次执行格式检查、lint 和完整生产构建。若只做写作中的快速检查，也可以单独运行 `pnpm run format:check` 或 `pnpm run lint`。
 
 如果格式检查失败，可运行 `pnpm run format`，然后重新检查改动，避免格式化到不相关文件。
 

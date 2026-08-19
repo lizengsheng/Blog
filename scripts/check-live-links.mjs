@@ -1,7 +1,8 @@
 /* eslint-disable no-console */
 
 const DEFAULT_SITE = "https://lizengsheng.github.io/Blog/";
-const startUrl = new URL(process.argv[2] ?? DEFAULT_SITE);
+const customSite = process.argv.slice(2).find(argument => argument !== "--");
+const startUrl = new URL(customSite ?? DEFAULT_SITE);
 const sitePrefix = startUrl.pathname.endsWith("/")
   ? startUrl.pathname
   : `${startUrl.pathname}/`;

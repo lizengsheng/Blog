@@ -14,6 +14,7 @@
     "format:check": "prettier --check .",
     "format": "prettier --write .",
     "lint": "eslint .",
+    "verify": "pnpm run format:check && pnpm run lint && pnpm run build",
     "check:links": "node scripts/check-live-links.mjs"
   },
   "dependencies": {

@@ -22,8 +22,11 @@ pnpm dev
 pnpm run format:check
 pnpm run lint
 pnpm run build
+pnpm run verify
 pnpm preview
 ```
+
+`pnpm run verify` 会依次运行格式检查、lint 和完整生产构建，适合在每次提交前使用。
 
 由于站点配置了 `/Blog` 基路径，本地预览入口通常为 `http://localhost:4321/Blog/`。
 

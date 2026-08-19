@@ -34,23 +34,9 @@ const homePath = getRelativeLocaleUrl(locale, "");
     class="app-layout my-1"
   >
     <section id="hero" class="border-border border-b pt-8 pb-6">
-      <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
+      <h1 class="my-4 text-4xl font-bold sm:my-8 sm:text-5xl">
         你好，我是 Li Zengsheng
       </h1>
-      <a
-        target="_blank"
-        href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}rss.xml`}
-        class="inline-block"
-        aria-label="RSS Feed"
-        title="RSS Feed"
-      >
-        <IconRss
-          width={20}
-          height={20}
-          class="stroke-accent scale-125 stroke-3 rtl:-rotate-90"
-        />
-        <span class="sr-only">RSS Feed</span>
-      </a>
 
       <p>
         这里聚焦大模型后训练、Agent 与 Agentic RL，记录我对核心原理、
@@ -71,7 +57,7 @@ const homePath = getRelativeLocaleUrl(locale, "");
         >
           关于页面
         </LinkButton>
-        了解我的学习方向与公开项目。
+        了解我的教育背景与关注方向。
       </p>
       <LinkButton
         href="https://lizengsheng.github.io/Resume/"
@@ -89,7 +75,19 @@ const homePath = getRelativeLocaleUrl(locale, "");
             <div class="me-2 mb-1 whitespace-nowrap sm:mb-0">
               {t.home.socialLinks}:
             </div>
-            <Socials />
+            <div class="flex items-center gap-1">
+              <Socials />
+              <a
+                target="_blank"
+                href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}rss.xml`}
+                class="focus-outline p-2 hover:rotate-6 sm:p-1"
+                aria-label="订阅 RSS（新窗口打开）"
+                title="订阅 RSS"
+              >
+                <IconRss class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 sm:scale-110" />
+                <span class="sr-only">订阅 RSS</span>
+              </a>
+            </div>
           </div>
         )
       }

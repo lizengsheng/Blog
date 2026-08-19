@@ -92,5 +92,4 @@ Agentic RL 关注的不只是一次回答，而是智能体在多轮环境交互
 
 - [Agent Lightning](https://www.microsoft.com/en-us/research/project/agent-lightning/)
 - [Agent World Model: Infinity Synthetic Environments for Agentic Reinforcement Learning](https://www.microsoft.com/en-us/research/publication/agent-world-model-infinity-synthetic-environments-for-agentic-reinforcement-learning/)
-- [Training Recipes for Agentic Reinforcement Learning in LLMs: A Survey](https://openreview.net/pdf?id=2Ui0Bu6uY2)
 - [DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models](https://arxiv.org/abs/2402.03300)
