@@ -33,3 +33,12 @@
 
 - 在全站顶部导航加入“简历”入口，使用新窗口打开在线简历。
 - 在首页首屏加入高可见度的“查看在线简历”按钮，并在 About 联系方式中同步展示。
+
+## 2026-08-19：远程仓库与正式部署
+
+- 创建公开仓库 `https://github.com/lizengsheng/Blog`，将当前博客快照作为独立项目的根提交推送到 `main`。
+- 保留 AstroPaper MIT 许可证和 `upstream` 远程，不携带模板仓库的工作流历史。
+- 通过仓库网页添加 Pages 部署与 PR CI 工作流，并同步回本地 `main`。
+- 将 GitHub Pages Source 设置为 GitHub Actions，正式地址为 `https://lizengsheng.github.io/Blog/`。
+- Pages 生产构建与部署成功；线上主页、文章、About、搜索、RSS、站点地图、favicon 和 Pagefind 资源均返回 200。
+- 在线 Pagefind 使用 `Agentic RL` 查询可返回正确文章，首页 canonical、中文标题和在线简历链接均正确。
