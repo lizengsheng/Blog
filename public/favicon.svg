@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">LZS</title>
+  <rect width="64" height="64" rx="14" fill="#006cac" />
+  <path d="M14 15v34h21v-8H23V15H14Z" fill="#fff" />
+  <path d="M32 15h19v7L41 41h11v8H30v-7l10-19h-8v-8Z" fill="#dff3ff" />
+</svg>
