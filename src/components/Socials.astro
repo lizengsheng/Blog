@@ -2,6 +2,11 @@
 import config from "@/config";
 import LinkButton from "./LinkButton.astro";
 
+type Props = {
+  variant?: "default" | "actions";
+};
+
+const { variant = "default" } = Astro.props;
 const { site, socials } = config;
 
 const icons = import.meta.glob<{
@@ -22,12 +27,42 @@ const items = await Promise.all(
 );
 ---
 
-<div class="flex flex-wrap items-center gap-1">
+<div
+  class:list={[
+    "flex flex-wrap items-center",
+    variant === "actions" ? "gap-2" : "gap-1",
+  ]}
+>
   {
     items.map(({ url, title, Icon }) =>
       Icon ? (
-        <LinkButton href={url} class="p-2 hover:rotate-6 sm:p-1" title={title}>
-          <Icon class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" />
+        <LinkButton
+          href={url}
+          target={
+            variant === "actions" && url.startsWith("http")
+              ? "_blank"
+              : undefined
+          }
+          rel={
+            variant === "actions" && url.startsWith("http")
+              ? "noopener noreferrer"
+              : undefined
+          }
+          class:list={[
+            variant === "actions"
+              ? "border-border hover:border-accent hover:bg-muted/50 size-11 justify-center rounded-md border transition-colors"
+              : "p-2 hover:rotate-6 sm:p-1",
+          ]}
+          title={title}
+        >
+          <Icon
+            class:list={[
+              "inline-block fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent",
+              variant === "actions"
+                ? "size-5"
+                : "size-6 scale-125 sm:scale-110",
+            ]}
+          />
           <span class="sr-only">{title}</span>
         </LinkButton>
       ) : null

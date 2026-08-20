@@ -37,47 +37,40 @@ const homePath = getRelativeLocaleUrl(locale, "");
         你好，我是 Li Zengsheng
       </h1>
 
-      <p>
-        这里聚焦大模型后训练、Agent 与 Agentic RL，记录我对核心原理、
-        工程系统和前沿工作的持续学习与思考。
+      <p class="max-w-2xl leading-7 sm:text-lg sm:leading-8">
+        聚焦大模型后训练、Agent 与 Agentic
+        RL，持续记录原理理解、工程实践与前沿学习。
       </p>
-      <p class="mt-2">
-        你可以从
+      <p class="text-muted-foreground mt-2 max-w-2xl leading-7">
+        从
         <LinkButton
-          class="hover:text-accent underline decoration-dashed underline-offset-4"
+          class="text-accent underline decoration-dashed underline-offset-4"
           href={getRelativeLocaleUrl(locale, "posts")}
         >
-          技术文章
+          文章
         </LinkButton>
-        开始阅读，也可以在
+        开始阅读，或前往
         <LinkButton
-          class="hover:text-accent underline decoration-dashed underline-offset-4"
+          class="text-accent underline decoration-dashed underline-offset-4"
           href={getRelativeLocaleUrl(locale, "about")}
         >
           关于页面
         </LinkButton>
         了解我的教育背景与关注方向。
       </p>
-      <LinkButton
-        href="https://lizengsheng.github.io/Resume/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="查看 Li Zengsheng 的在线简历（新窗口打开）"
-        class="focus-outline border-accent text-accent mt-5 rounded border px-4 py-2 font-semibold"
-      >
-        查看在线简历
-        <IconArrowRight class="inline-block" />
-      </LinkButton>
-      {
-        socials.length > 0 && (
-          <div class="mt-4 flex max-sm:flex-col sm:items-center">
-            <div class="me-2 mb-1 whitespace-nowrap sm:mb-0">
-              {t.home.socialLinks}:
-            </div>
-            <Socials />
-          </div>
-        )
-      }
+      <div class="mt-6 flex flex-wrap items-center gap-2">
+        <LinkButton
+          href="https://lizengsheng.github.io/Resume/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="查看 Li Zengsheng 的在线简历（新窗口打开）"
+          class="border-accent bg-accent text-accent-foreground hover:text-accent-foreground h-11 rounded-md border px-4 font-semibold transition-colors hover:opacity-90"
+        >
+          查看在线简历
+          <IconArrowRight aria-hidden="true" class="inline-block size-5" />
+        </LinkButton>
+        {socials.length > 0 && <Socials variant="actions" />}
+      </div>
     </section>
 
     {
