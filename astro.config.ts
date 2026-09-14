@@ -6,6 +6,9 @@ import { unified } from "@astrojs/markdown-remark";
 import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
 import rehypeCallouts from "rehype-callouts";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+import remarkMermaid from "./src/utils/remark-mermaid";
 import {
   transformerNotationDiff,
   transformerNotationHighlight,
@@ -34,10 +37,15 @@ export default defineConfig({
   markdown: {
     processor: unified({
       remarkPlugins: [
+        remarkMath,
+        remarkMermaid,
         [remarkToc, { heading: "目录" }],
-        [remarkCollapse, { test: "目录" }],
+        [remarkCollapse, { test: "目录", summary: "展开 / 收起目录" }],
       ],
-      rehypePlugins: [rehypeCallouts],
+      rehypePlugins: [
+        rehypeCallouts,
+        [rehypeKatex, { strict: "error", throwOnError: true }],
+      ],
     }),
     shikiConfig: {
       themes: { light: "min-light", dark: "night-owl" },

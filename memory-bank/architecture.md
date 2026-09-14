@@ -7,6 +7,8 @@
 - `src/content/pages/about.md`：公开个人资料、教育背景、关注方向与联系方式。
 - `src/content/posts/`：公开技术文章；下划线开头文件和目录不参与文章集合。
 - `src/styles/`：主题、中文字体栈和 Markdown 正文排版。
+- `src/utils/remark-mermaid.ts`：保留 Mermaid 源码的 Markdown 转换器，避免流程图被当作普通代码高亮。
+- `src/scripts/diagrams.ts`：按需加载 Mermaid，处理页面切换、主题变化及渲染失败回退；公式由 KaTeX 构建时渲染。
 - `public/`：favicon 与静态社交预览图。
 - `scripts/copy-pagefind.mjs`：生产构建后将 Pagefind 资源复制到 `public/pagefind`，兼容 Windows 和 CI。
 - `scripts/check-live-links.mjs`：从线上首页抓取并检查站内页面、资源、锚点与外部 HTTP(S) 链接。

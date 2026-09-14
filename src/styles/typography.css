@@ -20,7 +20,7 @@
     }
 
     h3 {
-      @apply italic;
+      font-style: normal;
     }
 
     p,
@@ -116,6 +116,47 @@
     pre {
       @apply focus-visible:outline-accent focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed;
     }
+  }
+
+  .app-prose .katex-display {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-block: 0.5rem;
+  }
+
+  .app-prose .katex {
+    font-size: 1.05em;
+  }
+  .app-prose .katex-display > .katex {
+    width: max-content;
+    min-width: 100%;
+  }
+  .app-prose .mermaid-diagram {
+    margin: 2rem 0;
+    min-width: 0;
+  }
+  .app-prose .mermaid-rendered {
+    overflow-x: auto;
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+  }
+  .app-prose .mermaid-rendered svg {
+    display: block;
+    margin: auto;
+    max-width: none !important;
+    height: auto;
+  }
+  .app-prose .mermaid-source {
+    overflow-x: auto;
+  }
+  .app-prose .mermaid-source[hidden],
+  .app-prose .mermaid-error[hidden] {
+    display: none;
+  }
+  .app-prose img {
+    max-width: 100%;
+    height: auto;
   }
 
   /* ===== Code Blocks & Syntax Highlighting ===== */
