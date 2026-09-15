@@ -15,8 +15,6 @@ description: "从注意力、归一化和位置编码，到 LoRA、SFT、常见�
 
 > 实现边界：以下代码是教学示例，各代码块独立使用，需要 Python 与 PyTorch 环境。注意力示例未覆盖全屏蔽行等所有边界；KV Cache、MoE 和 MLA 用于理解计算过程，不等同于完整模型的生产实现。训练损失示例省略分布式训练、数据流水线和完整 rollout 管理；示例输出不代表模型训练效果。
 
-## 目录
-
 ## Transformer
 
 ![1](https://raw.githubusercontent.com/1910853272/image/master/img/202603121816735.png)

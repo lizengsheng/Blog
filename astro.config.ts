@@ -3,12 +3,11 @@ import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import { unified } from "@astrojs/markdown-remark";
-import remarkToc from "remark-toc";
-import remarkCollapse from "remark-collapse";
 import rehypeCallouts from "rehype-callouts";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import remarkMermaid from "./src/utils/remark-mermaid";
+import rehypeReading from "./src/utils/rehype-reading";
 import {
   transformerNotationDiff,
   transformerNotationHighlight,
@@ -36,14 +35,10 @@ export default defineConfig({
   },
   markdown: {
     processor: unified({
-      remarkPlugins: [
-        remarkMath,
-        remarkMermaid,
-        [remarkToc, { heading: "目录" }],
-        [remarkCollapse, { test: "目录", summary: "展开 / 收起目录" }],
-      ],
+      remarkPlugins: [remarkMath, remarkMermaid],
       rehypePlugins: [
         rehypeCallouts,
+        rehypeReading,
         [rehypeKatex, { strict: "error", throwOnError: true }],
       ],
     }),

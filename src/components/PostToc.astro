@@ -1,0 +1,103 @@
+---
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+interface Props {
+  headings: Heading[];
+}
+const headings = Astro.props.headings.filter(
+  h => h.depth >= 2 && h.depth <= 4 && h.text !== "目录"
+);
+const groups: { heading: Heading; children: Heading[] }[] = [];
+for (const heading of headings) {
+  if (heading.depth === 2 || !groups.length)
+    groups.push({ heading, children: [] });
+  else groups[groups.length - 1].children.push(heading);
+}
+---
+
+{
+  groups.length > 0 && (
+    <>
+      <aside class="toc-shell" data-pagefind-ignore>
+        <details class="toc-fallback" open>
+          <summary>文章目录</summary>
+          <div class="toc-home">
+            <nav class="toc-nav" aria-label="文章目录">
+              <p class="toc-title">文章目录</p>
+              <ul class="toc-groups">
+                {groups.map(({ heading, children }) => (
+                  <li>
+                    {children.length ? (
+                      <details class="toc-group" open>
+                        <summary>
+                          <a
+                            href={`#${heading.slug}`}
+                            data-heading-id={heading.slug}
+                          >
+                            {heading.text}
+                          </a>
+                        </summary>
+                        <ul>
+                          {children.map(child => (
+                            <li
+                              class:list={{ "toc-level-4": child.depth === 4 }}
+                            >
+                              <a
+                                href={`#${child.slug}`}
+                                data-heading-id={child.slug}
+                              >
+                                {child.text}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </details>
+                    ) : (
+                      <a
+                        href={`#${heading.slug}`}
+                        data-heading-id={heading.slug}
+                      >
+                        {heading.text}
+                      </a>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+        </details>
+      </aside>
+      <button
+        type="button"
+        class="toc-toggle"
+        aria-haspopup="dialog"
+        aria-controls="post-toc-dialog"
+        hidden
+      >
+        目录
+      </button>
+      <dialog
+        id="post-toc-dialog"
+        class="toc-dialog"
+        aria-label="文章目录"
+        data-pagefind-ignore
+      >
+        <div class="toc-dialog-header">
+          <>
+            <span>跳转到章节</span>
+            <button type="button" class="toc-close" aria-label="关闭目录">
+              关闭 ×
+            </button>
+          </>
+        </div>
+        <div class="toc-dialog-body" />
+      </dialog>
+    </>
+  )
+}
+<script>
+  import "@/scripts/post-toc";
+</script>

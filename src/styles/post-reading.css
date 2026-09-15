@@ -1,0 +1,209 @@
+.post-reading {
+  width: 100%;
+}
+.post-reading > main {
+  min-width: 0;
+}
+.toc-shell {
+  width: min(100% - 2rem, 736px);
+  margin: 1.5rem auto;
+  font-size: 0.875rem;
+}
+.toc-fallback > summary {
+  cursor: pointer;
+}
+.toc-nav {
+  color: var(--color-foreground);
+  line-height: 1.6;
+}
+.toc-title {
+  margin: 0 0 0.8rem;
+  font-weight: 700;
+}
+.toc-groups,
+.toc-groups ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.toc-groups > li {
+  margin-bottom: 0.5rem;
+}
+.toc-groups ul {
+  border-left: 1px solid var(--color-border);
+  margin: 0.3rem 0 0.6rem 0.3rem;
+  padding-left: 0.65rem;
+}
+.toc-nav a {
+  display: block;
+  padding: 0.25rem 0.45rem;
+  border-radius: 0.2rem;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+.toc-nav a:hover {
+  color: var(--color-accent);
+  background: var(--color-muted);
+}
+.toc-nav a[aria-current="location"] {
+  color: var(--color-accent);
+  background: var(--color-muted);
+  font-weight: 600;
+}
+.toc-group > summary {
+  display: flex;
+  align-items: baseline;
+  cursor: pointer;
+  list-style: none;
+}
+.toc-group > summary::-webkit-details-marker {
+  display: none;
+}
+.toc-group > summary::before {
+  content: "›";
+  width: 0.75rem;
+  flex-shrink: 0;
+}
+.toc-group[open] > summary::before {
+  transform: rotate(90deg);
+}
+.toc-group > summary a {
+  flex: 1;
+}
+.toc-level-4 {
+  margin-left: 0.6rem;
+  font-size: 0.8rem;
+}
+.toc-toggle {
+  position: fixed;
+  right: 1rem;
+  bottom: calc(7rem + env(safe-area-inset-bottom, 0px));
+  z-index: 30;
+  padding: 0.6rem 1rem;
+  background: var(--color-background);
+  color: var(--color-accent);
+  border: 1px solid var(--color-border);
+  border-radius: 0.35rem;
+  box-shadow: 0 2px 12px #0002;
+}
+.toc-toggle[hidden] {
+  display: none;
+}
+.toc-dialog {
+  position: fixed;
+  inset: 0 0 0 auto;
+  margin: 0;
+  padding: 1rem;
+  width: min(88vw, 380px);
+  max-width: none;
+  height: 100dvh;
+  max-height: 100dvh;
+  color: var(--color-foreground);
+  background: var(--color-background);
+  border: 0;
+  border-left: 1px solid var(--color-border);
+}
+.toc-dialog::backdrop {
+  background: #0007;
+}
+.toc-dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.toc-close {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.25rem;
+}
+.toc-dialog-body {
+  overflow-y: auto;
+  max-height: calc(100dvh - 5rem);
+  font-size: 0.875rem;
+  overscroll-behavior: contain;
+}
+.toc-dialog-body .toc-title {
+  display: none;
+}
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  transform-origin: left;
+  transform: scaleX(0);
+  background: var(--color-accent);
+  z-index: 40;
+  pointer-events: none;
+}
+.code-wrapper {
+  position: relative;
+}
+.copy-code {
+  position: absolute;
+  right: 0.75rem;
+  top: var(--file-name-offset, -0.75rem);
+  border: 1px solid var(--color-border);
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  background: var(--color-muted);
+  color: var(--color-foreground);
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+@media (max-width: 1199px) {
+  .toc-enabled .toc-shell {
+    display: none;
+  }
+}
+@media (min-width: 1200px) {
+  .post-reading {
+    display: grid;
+    grid-template-columns: minmax(0, 768px) 256px;
+    gap: 2.5rem;
+    max-width: 1096px;
+    margin-inline: auto;
+    padding-inline: 1rem;
+    align-items: start;
+  }
+  .post-reading > main {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .toc-shell {
+    grid-column: 2;
+    grid-row: 1;
+    position: sticky;
+    top: 2rem;
+    width: 256px;
+    max-height: calc(100dvh - 4rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    margin: 0;
+    padding: 0.25rem 0.4rem 0.5rem 0;
+  }
+  .toc-fallback > summary {
+    display: none;
+  }
+  .toc-toggle {
+    display: none;
+  }
+}
+
+.post-reading h1 {
+  text-wrap: balance;
+}
+@media (min-width: 1200px) {
+  .post-back .app-layout {
+    max-width: 1096px;
+    padding-inline: 2rem;
+  }
+}
+
+/* Long-distance smooth scrolling loads intervening lazy images and moves the target. */
+html:has(.post-reading) {
+  scroll-behavior: auto;
+}
