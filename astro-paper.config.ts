@@ -5,7 +5,7 @@ export default defineAstroPaperConfig({
     url: "https://lizengsheng.github.io",
     title: "Li Zengsheng's Blog",
     description:
-      "聚焦大模型后训练、Agent 与 Agentic RL，记录原理、工程实践与持续学习。",
+      "关注大模型后训练、Agent 与 Agentic RL 算法原理与工程实践。",
     author: "Li Zengsheng",
     profile: "https://github.com/lizengsheng",
     ogImage: "default-og.png",
